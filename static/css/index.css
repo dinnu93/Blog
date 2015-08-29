@@ -1,0 +1,35 @@
+body{
+	font-family: 'Roboto';
+}
+.logo>img{
+	height: 35px;
+	width: 35px;
+	margin-top: -7px;
+}
+.profile{
+	width: 30px;
+	height: auto;
+	border-radius: 15px;
+	margin-top: -5px;
+}
+.navbar-menu{
+	border-radius: 0;
+	background: #fff;
+	border-bottom: solid 1px #666;
+	color: #666;
+}
+.navbar-default .navbar-nav>li>a{
+	color: #666;
+}
+.title{
+	font-weight: 300;
+	font-size: 20px;
+}
+.article{
+	font-weight: 300;
+	font-size: 16px;
+}
+
+.btn-post{
+	margin-top: 10px;
+}
