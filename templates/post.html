@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 {% block title %} {{ title }} {% endblock %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" type="text/css" href="/static/css/post.css">
+{% endblock %}
 {% block content %}
     <p class="title">{{ title }}</p>
 	{% autoescape false %}
