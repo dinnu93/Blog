@@ -1,25 +1,33 @@
 body{
 	font-family: 'Roboto';
 }
-.logo>img{
-	height: 35px;
-	width: 35px;
-	margin-top: -7px;
+
+.head{
+	margin-bottom: 50px;
+	padding-bottom: 0px;
+	border-bottom: solid 1px #ccc;
 }
 .profile{
 	width: 30px;
 	height: auto;
 	border-radius: 15px;
-	margin-top: -5px;
+	vertical-align: -4px;
 }
-.navbar-menu{
-	border-radius: 0;
-	background: #fff;
-	border-bottom: solid 1px #666;
-	color: #666;
+.heading{
+	color: #444;
+	font-family: 'Nixie One';
+	font-size: 28px;
+	width: 100%;
+	text-align: center;
 }
-.navbar-default .navbar-nav>li>a{
-	color: #666;
+.heading .links{
+	font-weight: 300;
+	font-size: 16px;
+	font-family: 'Roboto';
+	margin-top: 30px;
+}
+.links a:hover, .links a:focus{
+	text-decoration: none;
 }
 .title{
 	font-weight: 300;
