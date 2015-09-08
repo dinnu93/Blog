@@ -39,6 +39,20 @@ def post(id):
 	conn.close()
 	return render_template('post.html',title = title,article = article)
 
+@app.route('/about')
+def about():
+	return render_template("WorkInProgress.html")
+
+@app.route('/projects')
+def projects():
+	return render_template("WorkInProgress.html")
+
+@app.route('/contact')
+def contact():
+	return render_template("WorkInProgress.html")
+
+
+	
 
 def db_connect():
 	conn = sqlite3.connect('example.db')
