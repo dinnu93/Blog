@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %} {{ title }} {% endblock %}
+{% block head %}
+  {{ super() }}
+  <link rel="stylesheet" type="text/css" href="/static/css/post.css">
+{% endblock %}
+{% block content %}
+	{% autoescape false %}
+	<p class="article" style="font-size:18px">
+		I'm a computer programmer and a math buff. I love to learn things from their first principles and I value absolute learning over relative learning If you know what I mean. I enjoy learning new stuff and working on it all day, I'm a life long learner. 
+		<br><br>
+		Till now I've worked for a couple of great companies with small teams, lots of things to do and learn. I'm again at a cross roads in my life, But this time I want to work for a great company doing interesting things, Be it a big company or a startup but I want my work to have a real impact.  
+	</p>
+    {% endautoescape %}
+{% endblock %}

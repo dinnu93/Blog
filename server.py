@@ -41,7 +41,7 @@ def post(id):
 
 @app.route('/about')
 def about():
-	return render_template("WorkInProgress.html")
+	return render_template("about.html")
 
 @app.route('/projects')
 def projects():
@@ -49,7 +49,7 @@ def projects():
 
 @app.route('/contact')
 def contact():
-	return render_template("WorkInProgress.html")
+	return render_template("contact.html")
 
 
 	
