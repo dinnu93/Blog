@@ -1,5 +1,5 @@
 body{
-	font-family: 'Roboto';
+	font-family: 'Lato';
 }
 
 .head{
@@ -14,28 +14,34 @@ body{
 	vertical-align: -4px;
 }
 .heading{
-	color: #444;
-	font-family: 'Nixie One';
-	font-size: 28px;
+	color: #333;
+	font-weight: 400;
+	font-size: 40px;
 	width: 100%;
 	text-align: center;
 }
 .heading .links{
-	font-weight: 300;
-	font-size: 16px;
-	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 12px;
 	margin-top: 30px;
 }
-.links a:hover, .links a:focus{
+.links a, .links a:hover, .links a:focus{
 	text-decoration: none;
+	color: #666;
 }
 .title{
-	font-weight: 300;
-	font-size: 20px;
+	font-weight: 400;
+	font-size: 32px;
+	color: #333;
+}
+.title a, .title a:hover, .title a:focus,.article a, .article a:hover, .article a:focus{
+	text-decoration: none;
+	color: #333;
 }
 .article{
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 18px;
+	color: #404040;
 }
 
 .btn-post{

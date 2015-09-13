@@ -2,7 +2,8 @@
 {% block content %}
     {% for item in articles %}
 	<p class="title"><a href={{ "/post/%s"%item[0] }}>{{ item[1] }}</a></p>
+	<span style="color:#666;font-size:16px;font-weight:300">{{ item[3] }}</span><br><br>
 	<p class="article">{{ summary(item[2])+"..." }}</p>
-	<span style="color:#999;font-size:14px;font-weight:300">{{ item[3] }}</span><br><br><br>
+	<br><br><br>
     {% endfor %}
 {% endblock %}
