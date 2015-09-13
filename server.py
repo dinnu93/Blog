@@ -10,7 +10,7 @@ def index():
 	return render_template('index.html', articles = list_of_articles ,summary = summary)
 
 def summary(article):
-	pos = article.find(" ",250)
+	pos = article.find(" ",300)
 	return article[:pos]
 
 @app.route('/newpost',methods=['GET','POST'])
