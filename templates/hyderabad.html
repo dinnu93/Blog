@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/static/img/dinnu.png">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <style type="text/css">
+      html, body { height: 100%; margin: 0; padding: 0; font-family: 'Lato';}
+      #map {
+        margin-top: 50px;
+        height: 500px;
+        border: solid 1px #ccc;
+       }
+       h1{
+        text-align: center;
+       }
+       input{
+        text-align: center;
+       }
+    </style>
+    <script>
+  $(function() {
+    var availableTags = ['Gachibowli', 'Kondapur', 'Miyapur', 'Kukatpally', 'Manikonda', 'Madhapur', 'Hi Tech City', 'Chanda Nagar', 'KPHB', 'Banjara Hills', 'Uppal', 'Madinaguda', 'Beeramguda', 'Gopanpally', 'Pragathi Nagar', 'Bachupally', 'Sainikpuri', 'Nizampet', 'Kompally', 'Secunderabad', 'Attapur', 'Dilsukhnagar', 'Jubilee Hills', 'Nallagandla', 'LB Nagar', 'Begumpet', 'Alwal', 'Hafeezpet', 'Adibatla', 'Ameerpet', 'Malkajgiri', 'Bandlaguda', 'Moti Nagar', 'Moosapet', 'Toli Chowki', 'Appa Junction', 'Bowenpally', 'Boduppal', 'A S Rao Nagar', 'Sanath Nagar', 'Nagole', 'Vanasthalipuram', 'Kothapet', 'Lingampally', 'Sanjeeva Reddy Nagar', 'Ghatkesar', 'Kokapet', 'Neredmet', 'Dammaiguda', 'Mehadipatnam', 'Nizampet Road', 'Hayat Nagar', 'Mehdipatnam', 'Nallakunta', 'Puppalaguda', 'Himayath Nagar', 'Masab Tank', 'Malakpet', 'Serilingampally', 'Trimulgherry', 'Tarnaka', 'Gajularamaram', 'West Marredpally', 'Ameenpur', 'Srisailam Highway', 'Shaikpet', 'Habsiguda', 'Saroor Nagar', 'Somajiguda', 'ECIL', 'Shamshabad', 'Mallapur', 'Yapral', 'Kothaguda', 'Yousufguda', 'Tellapur', 'Rajendra Nagar', 'Bolaram', 'Langar Houz', 'Nacharam', 'Nagaram', 'Narsingi', 'Kachiguda', 'Ramanthapur', 'Chintal', 'Mallampet', 'Shamirpet', 'Medchal', 'Bala Nagar', 'Whitefields', 'Nanakramguda', 'East Marredpally', 'Domalguda', 'Jeedimetla', 'Basheerbagh', 'Karmanghat', 'Padma Rao Nagar', 'Amberpet', 'Erragadda', 'Gandhi Nagar', 'Quthbullapur', 'Abids', 'Rampally', 'Kapra', 'Old Bowenpally', 'Patancheru', 'Sri Nagar Colony', 'Kowkur', 'Meerpet', 'Bibinagar', 'Moula Ali', 'Pocharam', 'Madhura Nagar', 'Cherlapally', 'Shadnagar', 'Badangpet', 'Suchitra Road', 'Hyderguda', 'Kavadiguda', 'Khairatabad', 'Srinagar Colony', 'Saidabad', 'Balapur', 'Kushaiguda', 'Musheerabad', 'Chikkadapally', 'Almasguda', 'Medipalli', 'Shankarpalli', 'Koti', 'Santosh Nagar', 'Bhongir', 'Hastinapuram', 'Ramoji Film City', 'Hyder Nagar', 'Ram Nagar', 'Karkhana', 'Narayanguda', 'Punjagutta', 'Borabanda', 'Ramchandra Puram', 'Lakdi Ka Pul', 'Gudimalkapur', 'Nampally', 'Anandbagh', 'Moinabad', 'Gurram Guda', 'Tukkuguda', 'Maheshwaram', 'Chandrayanagutta', 'Kothur', 'Isnapur', 'Kismatpur', 'Manneguda', 'Bowrampet', 'Kollur', 'Champapet', 'Raj Bhavan Road', 'Ibrahimpatnam', 'Peerzadiguda', 'Lallaguda', 'Warangal highway', 'Maruti Nagar', 'Mokila', 'Upparpally', 'Nandigama', 'Rajeev Nagar', 'Jawahar Nagar', 'Sangareddy', 'New Mallepally', 'Moosarambagh', 'Sindhi Colony', 'Sitaphalmandi', 'Film Nagar', 'Ramakrishnapuram', 'BN Reddy Nagar', 'Golkonda', 'Mettuguda', 'Upperpally', 'Kanchan Bagh', 'Shamshabad Road', 'Subhash Nagar', 'Chilkur', 'Jalpally', 'Shanthi Nagar', 'Dundigal', 'Humayun Nagar', 'Osman Nagar', 'Pet basheerabad', 'Lalapet', 'Rai Durg', 'Bahadurpally', 'Lothkunta', 'Bahadurpura', 'Chevalla', 'Hasmathpet', 'Hakimpet', 'Manchirevula', 'Venkat Reddy Colony', 'Hanuman Nagar Colony', 'Gandi Maisamma', 'Bhoiguda', 'Pochampally', 'Adikmet', 'Suraram', 'Peerancheru', 'Abdullapurmet', 'Adarsh Nagar', 'Walker Town', 'Vijayawada Highway', 'Outer Ring Road', 'NH-9 Highway', 'Kandukur', 'Chintalkunta', 'Surya Nagar Colony', 'Keesara', 'Kazipally', 'Saleem Nagar', 'Gagillapur', 'Falaknuma', 'Venkatapuram', 'Rudraram', 'NH-7', 'Dullapally', 'Karwan', 'Dayara', 'Katedan', 'R.K.Puram', 'Gulshan-e-Iqbal Colony', 'Nagarjuna Sagar Road', 'Afzal Gunj', 'Yakhutpura', 'Kakaguda', 'Mylargada', 'Vattepally', 'Sivarampalli', 'Turkayamjal', 'Ghansi Bazar', 'Uppaguda', 'Thimmapur', 'Muthangi', 'New Malakpet', 'Vayupuri', 'Pavanpuri Colony', 'Shahbaad', 'Narsapur Highway', 'Kalasiguda', 'Neeladri Nagar', 'Gundlapochampally', 'S D Road', 'Siddhartha Nagar', 'Osman Sagar Road', 'Edulanagulapalle', 'Lumbini Park', 'Moghalpura', 'Nawab Saheb Kunta', 'Qutub Shahi Tombs', 'Ramgopalpet', 'Narketpalli', 'Bhogaram', 'Lal Darwaza', 'Dhoolpet', 'NTR Nagar', 'Adda Gutta', 'Medak Road', 'Rani Gunj', 'Zahirabad', 'Gunrock Enclave', 'Mazidpur', 'Tupran', 'Bairagiguda', 'Jam Bagh', 'Rasoolpura', 'Shameerpet', 'Saifabad', 'Pulimamidi', 'Chintapallyguda', 'Jeera', 'Dasarlapally', 'Burgul', 'Sheriguda', 'Rendlagadda', 'Majarguda', 'Pahadi Shareef', 'Moti Ganpur', 'Mansooraba'];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+  </head>
+  <body>
+    {% autoescape false %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <h1>{{ locality }}</h1>
+          <form action="" method="post">
+            <input id="tags" name="locality" placeholder="Type Anything..." class="form-control">
+            <br>
+            <input type="submit" value="Get map" class="btn btn-primary btn-block">
+          </form>
+
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+    <div id="map"></div>
+    <script type="text/javascript">
+    function initMap() {
+      var myLatlng = new google.maps.LatLng({{ lat }},{{ lng }});
+      var mapOptions = {
+        zoom: 11,
+        center: myLatlng
+      }
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+      var marker = new google.maps.Marker({
+        position: myLatlng
+      });
+      marker.setMap(map);
+    }
+
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQeKzcphInwCWlgHM0mj0k8XeM9-2ZZdQ&callback=initMap">
+    </script>
+    {% endautoescape %}
+  </body>
+</html>
