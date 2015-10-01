@@ -1,9 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
     {% for item in articles %}
-	<p class="title"><a href={{ "/post/%s"%item[0] }}>{{ item[1] }}</a></p>
+	<div class="title"><a href={{ "/post/%s"%item[0] }}>{{ item[1] }}</a></div>
 	<span style="color:#666;font-size:16px;font-weight:300">{{ item[3] }}</span><br><br>
-	<p class="article">{{ summary(item[2])+"..." }}</p>
+	{% autoescape false %}
+	<div class="article">{{ summary(item[2])+"..." }}</div>
+	{% endautoescape %}
 	<br><br><br>
     {% endfor %}
 {% endblock %}

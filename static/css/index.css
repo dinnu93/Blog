@@ -43,7 +43,12 @@ body{
 	font-size: 18px;
 	color: #404040;
 }
-
+.code{
+	font-size: 16px;
+	padding: 20px 40px;
+	background-color: #eee;
+	border-radius: 10px;
+}
 .btn-post{
 	margin-top: 10px;
 }
