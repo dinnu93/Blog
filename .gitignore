@@ -1,2 +1,3 @@
 *.DS_Store
-*.db
+example.db
+server.pyc
