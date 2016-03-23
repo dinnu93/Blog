@@ -1,12 +1,18 @@
 body{
 	font-family: 'Lato';
+	background: url('https://d3ui957tjb5bqd.cloudfront.net/images/screenshots/products/27/277/277157/pattern-with-travel-symbols-on-blue-f.jpg?1418934330');
 }
 
 .head{
-	margin-bottom: 50px;
-	padding-bottom: 0px;
-	border-bottom: solid 1px #ccc;
+	padding: 10px 40px 20px 40px;
+	/* border-bottom: dashed 1px #fff; */
+	background: #81C6C1;
 }
+.content{
+	padding: 20px 40px 10px 40px;
+        background: #81C6C1;
+}
+
 .profile{
 	width: 30px;
 	height: auto;
@@ -22,12 +28,15 @@ body{
 }
 .heading .links{
 	font-weight: 400;
-	font-size: 12px;
-	margin-top: 30px;
+	font-size: 14px;
+	margin-top: 20px;
 }
 .links a, .links a:hover, .links a:focus{
 	text-decoration: none;
-	color: #666;
+	padding: 5px 10px;
+	background: #fff;
+	border-radius: 3px;
+	color: #333;
 }
 .title{
 	font-weight: 400;
