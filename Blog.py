@@ -23,7 +23,7 @@ def newpost():
 		article_article = article_article.replace("\n","<br>")
 		d_time = date.today()
 		time_time = d_time.strftime("%B %d, %Y")
-		conn = sqlite3.connect('/var/www/FlaskApps/Blog/example.db')
+		conn = sqlite3.connect('/var/www/Blog/example.db')
 		c = conn.cursor()
 		c.execute('INSERT INTO blog VALUES (NULL, ?, ?, ?)',(title_title,article_article,time_time))
 		conn.commit()
@@ -33,7 +33,7 @@ def newpost():
 
 @app.route('/post/<id>')
 def post(id):
-	conn = sqlite3.connect('/var/www/FlaskApps/Blog/example.db')
+	conn = sqlite3.connect('/var/www/Blog/example.db')
 	c = conn.cursor()
 	c.execute('SELECT title,article,time FROM blog where id = %s'%id)
 	title,article,time = c.fetchone()
@@ -49,7 +49,7 @@ def contact():
 	return render_template("contact.html")
 
 def db_connect():
-	conn = sqlite3.connect('/var/www/FlaskApps/Blog/example.db')
+	conn = sqlite3.connect('/var/www/Blog/example.db')
 	c = conn.cursor()
 	c.execute('SELECT id,title,article,time FROM blog order by id DESC')
 	list_of_articles = c.fetchall()
@@ -57,6 +57,6 @@ def db_connect():
 	return list_of_articles
 
 if __name__ == '__main__':
-        app.run()
+        app.run(debug=True)
    
 
